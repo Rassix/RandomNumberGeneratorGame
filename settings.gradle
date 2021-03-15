@@ -1,0 +1,4 @@
+rootProject.name = 'randomNumberGenerator'
+include 'application'
+include 'integration-tests'
+

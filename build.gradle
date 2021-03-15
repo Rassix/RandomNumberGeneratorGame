@@ -1,0 +1,39 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:2.4.3")
+	}
+}
+
+subprojects {
+
+	apply plugin: 'java'
+	apply plugin: 'io.spring.dependency-management'
+
+	repositories {
+		mavenCentral()
+	}
+
+	dependencies {
+		implementation 'org.springframework.boot:spring-boot-starter-websocket'
+		implementation 'org.springframework.boot:spring-boot-starter'
+		testImplementation 'org.springframework.boot:spring-boot-starter-test'
+		compileOnly 'org.projectlombok:lombok:1.18.16'
+		annotationProcessor 'org.projectlombok:lombok:1.18.16'
+		testImplementation 'org.assertj:assertj-core:3.19.0'
+		testCompileOnly 'org.projectlombok:lombok:1.18.16'
+		testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
+	}
+
+	dependencyManagement {
+		imports {
+			mavenBom("org.springframework.boot:spring-boot-dependencies:2.4.3")
+		}
+	}
+
+	test {
+		useJUnitPlatform()
+	}
+}
