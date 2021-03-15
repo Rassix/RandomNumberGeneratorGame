@@ -1,6 +1,5 @@
 package com.rassix.randomNumberGenerator.controller;
 
-import com.rassix.randomNumberGenerator.controller.dto.AddPlayerRequest;
 import com.rassix.randomNumberGenerator.controller.dto.ErrorResponse;
 import com.rassix.randomNumberGenerator.exception.PlayerExistsException;
 import com.rassix.randomNumberGenerator.repository.model.Game;
@@ -13,12 +12,10 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
